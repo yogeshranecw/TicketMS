@@ -1,0 +1,5 @@
+/results/*
+/logs/*
+/data/rawdata/*
+/config/*.properties
+/config/config1.json

@@ -1,0 +1,74 @@
+{
+    "JmeterSetting": {
+        "mainSetting": {
+            "jmxfile": "RegistryMS.jmx",
+            "projectpath": "/home/PT/projects/RegistryMS/",
+            "JMETER_HOME": "/home/PT/tools/jmeter/apache-jmeter-5.3",
+            "ReportFilePrefix": "LT_RegistryMS",
+            "micro_service": "registry_micro_service",
+            "sanityTest": "false",
+            "sanityTestDuration": "60",
+            "waitTime": "60",
+            "uploadResultInDB": "true"
+        },
+        "Script": {
+            "HOST": "ticket.qa.use1.cwticketdev.cwnet.io",
+            "duration": "3600",
+            "get_all_keys_users": "50",
+            "get_all_keys_rampup": "60",
+            "get_all_keys_tpm" : "40",
+            "get_single_key_users": "50",
+            "get_single_key_rampup": "60",
+            "get_single_key_tpm" : "40",
+            "kafka_producer_users" : "10",
+            "kafka_producer_rampup": "60",
+            "kafka_producer_tpm" : "30",
+            "KAFKA_TOPIC": "registry",
+            "KAFKA_BROKERS": "172.28.18.65:9092\\,172.28.19.46:9092\\,172.28.18.96:9092\\,172.28.19.139:9092\\,172.28.17.137:9092\\,172.28.17.166:9092\\,172.28.18.80:9092\\,172.28.16.27:9092\\,172.28.18.100:9092",
+            "filename": "registry-error"
+        },
+        "SplitMode": {
+            "SplitMode": "false",
+            "Master": "172.28.17.244",
+            "SlaveList": "",
+            "remoteUser": "root"
+        }
+    },
+    "DB": {
+        "host": "172.28.18.170",
+        "port": "5432",
+        "user": "postgres",
+        "database": "postgres",
+        "baseline": 50
+    },
+    "JAVA_OPTIONS": {
+        "JMX_OPT": "-Dcom.sun.management.jmxremote  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.remote.ssl=false"
+    },
+    "housekeeping": {
+        "rawTableRetention": "100",
+        "movetoBackup": "1",
+        "deleteFromBackup": "5"
+    },
+     "HardwareStats": {
+        "getstats" : "true",
+        "user" : "perfuser",
+        "ms_ips_path" : "/home/PT/projects/RegistryMS/scripts/IP_list.txt",
+        "script" : "/home/perfuser/load-test-scripts-RegistryMS/scheduler.py",
+        "hardware_stat_path" : "/home/perfuser/load-test-scripts-RegistryMS",
+        "ms_cms_service" : "registry-e71c9c1e",
+        "kafka_cms_service" : "agent-res",
+        "zookeeper_cms_service" : "agent-res",
+        "cassandra_cms_service" : "common"
+  },
+    "customScripts": {
+        "preTestExecution": "false",
+        "preTestExecutionNodes": "100.123.12.13,127.0.1.1",
+        "preTestScript": "preTestScript.py",
+        "postTestExecution": "true",
+        "postTestScript": "postTestScript.py"
+    },
+    "RunSetting": {
+        "totalRunDuration": "3600",
+        "HighestRampup": "60"
+    }
+}
