@@ -743,7 +743,7 @@ fileWriter.close();
       <hashTree>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Tickets" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">${__Random(950,1000,)}</stringProp>
+          <stringProp name="LoopController.loops">${__Random(5,10,)}</stringProp>
         </LoopController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Post Ticket" enabled="true">
@@ -801,7 +801,7 @@ fileWriter.close();
           </hashTree>
           <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Notes to Ticket" enabled="true">
             <boolProp name="LoopController.continue_forever">true</boolProp>
-            <stringProp name="LoopController.loops">${__Random(50,100,)}</stringProp>
+            <stringProp name="LoopController.loops">${__Random(5,10,)}</stringProp>
           </LoopController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Post Notes" enabled="true">
@@ -918,12 +918,6 @@ fileWriter.close();
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
-        <DebugSampler guiclass="TestBeanGUI" testclass="DebugSampler" testname="Debug Sampler" enabled="true">
-          <boolProp name="displayJMeterProperties">false</boolProp>
-          <boolProp name="displayJMeterVariables">true</boolProp>
-          <boolProp name="displaySystemProperties">false</boolProp>
-        </DebugSampler>
         <hashTree/>
       </hashTree>
     </hashTree>
