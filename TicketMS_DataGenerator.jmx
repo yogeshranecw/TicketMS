@@ -93,7 +93,7 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
-      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp_Thread_Group" enabled="false">
+      <SetupThreadGroup guiclass="SetupThreadGroupGui" testclass="SetupThreadGroup" testname="setUp_Thread_Group" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
           <boolProp name="LoopController.continue_forever">false</boolProp>
@@ -240,7 +240,7 @@
               <stringProp name="filename"></stringProp>
               <stringProp name="script">String tagIDs = vars.get(&quot;tagIDs&quot;);
 //tagIDs = tagIDs + &quot;,&quot; + vars.get(&quot;partnerID&quot;) + &quot;_&quot; + vars.get(&quot;tagID_1&quot;) ;
-tagIDs = tagIDs + &quot;,&quot; + vars.get(&quot;tagID_1&quot;) ;
+tagIDs = tagIDs + &quot;##&quot; + vars.get(&quot;tagID_1&quot;) ;
 //tagIDs = tagIDs.replace(&quot;null,&quot;,&quot;&quot;);
 vars.put(&quot;tagIDs&quot;, tagIDs.toString());
 </stringProp>
@@ -293,7 +293,7 @@ vars.put(&quot;tagIDs&quot;, tagIDs.toString());
               <stringProp name="filename"></stringProp>
               <stringProp name="script">String teamIDs = vars.get(&quot;teamIDs&quot;);
 //teamIDs = teamIDs + &quot;,&quot; + vars.get(&quot;partnerID&quot;) + &quot;_&quot; + vars.get(&quot;teamID_1&quot;) ;
-teamIDs = teamIDs + &quot;,&quot; + vars.get(&quot;teamID_1&quot;) ;
+teamIDs = teamIDs + &quot;##&quot; + vars.get(&quot;teamID_1&quot;) ;
 //teamIDs = teamIDs.replace(&quot;null,&quot;,&quot;&quot;);
 vars.put(&quot;teamIDs&quot;, teamIDs.toString());
 </stringProp>
@@ -376,7 +376,7 @@ vars.put(&quot;teamIDs&quot;, teamIDs.toString());
               <stringProp name="filename"></stringProp>
               <stringProp name="script">String queueIDs = vars.get(&quot;queueIDs&quot;);
 //queueIDs = queueIDs + &quot;,&quot; + vars.get(&quot;partnerID&quot;) + &quot;_&quot;  + vars.get(&quot;queueID_1&quot;) ;
-queueIDs = queueIDs + &quot;,&quot; + vars.get(&quot;queueID_1&quot;) ;
+queueIDs = queueIDs + &quot;##&quot; + vars.get(&quot;queueID_1&quot;) ;
 //queueIDs = queueIDs.replace(&quot;null,&quot;,&quot;&quot;);
 vars.put(&quot;queueIDs&quot;, queueIDs.toString());</stringProp>
             </BeanShellPostProcessor>
@@ -429,7 +429,7 @@ vars.put(&quot;queueIDs&quot;, queueIDs.toString());</stringProp>
               <stringProp name="filename"></stringProp>
               <stringProp name="script">String statusWFIDs = vars.get(&quot;statusWFIDs&quot;);
 //statusWFIDs = statusWFIDs + &quot;,&quot; + vars.get(&quot;partnerID&quot;) + &quot;_&quot; + vars.get(&quot;statusWFID_1&quot;) ;
-statusWFIDs = statusWFIDs + &quot;,&quot; + vars.get(&quot;statusWFID_1&quot;) ;
+statusWFIDs = statusWFIDs + &quot;##&quot; + vars.get(&quot;statusWFID_1&quot;) ;
 //statusWFIDs = statusWFIDs.replace(&quot;null,&quot;,&quot;&quot;);
 vars.put(&quot;statusWFIDs&quot;, statusWFIDs.toString());
 </stringProp>
@@ -613,7 +613,7 @@ vars.put(&quot;statusWFIDs&quot;, statusWFIDs.toString());
         </CSVDataSet>
         <hashTree/>
         <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">true</boolProp>
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
           <objProp>
             <name>saveConfig</name>
             <value class="SampleSaveConfiguration">
@@ -699,8 +699,9 @@ String s3 = vars.get(&quot;teamIDs&quot;);
 String s4 = vars.get(&quot;statusWFIDs&quot;);
 
 int count = 5;
+String splitor = &quot;##&quot;;
 
-if(s1!=null &amp;&amp; s2!=null &amp;&amp; s3!=null &amp;&amp; s4!=null &amp;&amp; s1.split(&quot;,&quot;).length&gt;count &amp;&amp; s2.split(&quot;,&quot;).length&gt;count &amp;&amp; s3.split(&quot;,&quot;).length&gt;count &amp;&amp; s4.split(&quot;,&quot;).length&gt;count){
+if(s1!=null &amp;&amp; s2!=null &amp;&amp; s3!=null &amp;&amp; s4!=null &amp;&amp; s1.split(splitor).length&gt;count &amp;&amp; s2.split(splitor).length&gt;count &amp;&amp; s3.split(splitor).length&gt;count &amp;&amp; s4.split(splitor).length&gt;count){
 //log.info(&quot;PartnerID &gt;&gt;&gt;&gt; &quot; + vars.get(&quot;partnerID&quot;));	
 //log.info(&quot;Queues &gt;&gt;&gt;&gt;&gt; &quot; + s1);
 //log.info(&quot;Tags &gt;&gt;&gt;&gt;&gt; &quot; + s2);
@@ -711,10 +712,10 @@ vars.put(&quot;tagIDs&quot;,&quot;&quot;);
 vars.put(&quot;teamIDs&quot;,&quot;&quot;);
 vars.put(&quot;statusWFIDs&quot;,&quot;&quot;);
 
-s1 = s1.replace(&quot;null,&quot;,&quot;&quot;);
-s2 = s2.replace(&quot;null,&quot;,&quot;&quot;);
-s3 = s3.replace(&quot;null,&quot;,&quot;&quot;);
-s4 = s4.replace(&quot;null,&quot;,&quot;&quot;);
+s1 = s1.replace(&quot;null##&quot;,&quot;&quot;);
+s2 = s2.replace(&quot;null##&quot;,&quot;&quot;);
+s3 = s3.replace(&quot;null##&quot;,&quot;&quot;);
+s4 = s4.replace(&quot;null##&quot;,&quot;&quot;);
 
 String csvFile = &quot;D:/Repositories/RegistryMS/data/partners_data.csv&quot;;
 String[] params = {vars.get(&quot;partnerID&quot;), s1, s3, s2, s4}; 
@@ -742,7 +743,7 @@ fileWriter.close();
       <hashTree>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Tickets" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">${__Random(5,10,)}</stringProp>
+          <stringProp name="LoopController.loops">${__Random(950,1000,)}</stringProp>
         </LoopController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Post Ticket" enabled="true">
@@ -754,7 +755,7 @@ fileWriter.close();
                   <stringProp name="Argument.value">{&#xd;
 	&quot;summary&quot;:&quot;${__RandomString(${__Random(1,150,)},abcdABCD1234,)}&quot;,&#xd;
 	&quot;companyID&quot;:&quot;${__UUID}&quot;,&#xd;
-	&quot;queueID&quot;:&quot;${queue_1}&quot;&#xd;
+	&quot;queueID&quot;:&quot;${__substring(${queue},0,36,)}&quot;&#xd;
 }&#xd;
 </stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -800,7 +801,7 @@ fileWriter.close();
           </hashTree>
           <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Notes to Ticket" enabled="true">
             <boolProp name="LoopController.continue_forever">true</boolProp>
-            <stringProp name="LoopController.loops">${__Random(5,10,)}</stringProp>
+            <stringProp name="LoopController.loops">${__Random(50,100,)}</stringProp>
           </LoopController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Post Notes" enabled="true">
@@ -845,7 +846,7 @@ fileWriter.close();
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-	&quot;tagID&quot;:&quot;${__V(tag_${__jexl2(${__jm__Add_Tags_to_Tickets__idx}+1)})}&quot;&#xd;
+	&quot;tagID&quot;:&quot;${__substring(${tag},${__jexl2(${__jm__Add_Tags_to_Tickets__idx}*38)},${__jexl2(${__jm__Add_Tags_to_Tickets__idx}*38 + 36)},)}&quot;&#xd;
 }&#xd;
 </stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
@@ -872,7 +873,7 @@ fileWriter.close();
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
           <stringProp name="filename">${projectpath}/data/partners_data.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">partnerID,queue_1,queue_2,queue_3,queue_4,queue_5,team_1,team_2,team_3,team_4,team_5,tag_1,tag_2,tag_3,tag_4,tag_5</stringProp>
+          <stringProp name="variableNames">partnerID,queue,team,tag</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
