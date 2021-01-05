@@ -194,59 +194,6 @@
           <stringProp name="LoopController.loops">5</stringProp>
         </LoopController>
         <hashTree>
-          <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Tags" enabled="true">
-            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
-            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
-              <collectionProp name="Arguments.arguments">
-                <elementProp name="" elementType="HTTPArgument">
-                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                  <stringProp name="Argument.value">{&#xd;
-	&quot;name&quot;:&quot;${__RandomString(50,1234ABCDabcd)}&quot;&#xd;
-}&#xd;
-</stringProp>
-                  <stringProp name="Argument.metadata">=</stringProp>
-                </elementProp>
-              </collectionProp>
-            </elementProp>
-            <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
-            <stringProp name="HTTPSampler.port"></stringProp>
-            <stringProp name="HTTPSampler.protocol">https</stringProp>
-            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/tags</stringProp>
-            <stringProp name="HTTPSampler.method">POST</stringProp>
-            <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-            <stringProp name="HTTPSampler.response_timeout"></stringProp>
-          </HTTPSamplerProxy>
-          <hashTree>
-            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="extract TagID" enabled="true">
-              <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-              <stringProp name="RegexExtractor.refname">tagID</stringProp>
-              <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})&quot;</stringProp>
-              <stringProp name="RegexExtractor.template">$1$</stringProp>
-              <stringProp name="RegexExtractor.default"></stringProp>
-              <stringProp name="RegexExtractor.match_number">-1</stringProp>
-              <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
-              <stringProp name="Sample.scope">all</stringProp>
-            </RegexExtractor>
-            <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Add ID in tagIDs variable" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">String tagIDs = vars.get(&quot;tagIDs&quot;);
-//tagIDs = tagIDs + &quot;,&quot; + vars.get(&quot;partnerID&quot;) + &quot;_&quot; + vars.get(&quot;tagID_1&quot;) ;
-tagIDs = tagIDs + &quot;##&quot; + vars.get(&quot;tagID_1&quot;) ;
-//tagIDs = tagIDs.replace(&quot;null,&quot;,&quot;&quot;);
-vars.put(&quot;tagIDs&quot;, tagIDs.toString());
-</stringProp>
-            </BeanShellPostProcessor>
-            <hashTree/>
-          </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Teams" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -286,18 +233,6 @@ vars.put(&quot;tagIDs&quot;, tagIDs.toString());
               <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               <stringProp name="Sample.scope">all</stringProp>
             </RegexExtractor>
-            <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Add ID in teamIDs variable" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">String teamIDs = vars.get(&quot;teamIDs&quot;);
-//teamIDs = teamIDs + &quot;,&quot; + vars.get(&quot;partnerID&quot;) + &quot;_&quot; + vars.get(&quot;teamID_1&quot;) ;
-teamIDs = teamIDs + &quot;##&quot; + vars.get(&quot;teamID_1&quot;) ;
-//teamIDs = teamIDs.replace(&quot;null,&quot;,&quot;&quot;);
-vars.put(&quot;teamIDs&quot;, teamIDs.toString());
-</stringProp>
-            </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST MembersToTeam" enabled="true">
@@ -370,17 +305,6 @@ vars.put(&quot;teamIDs&quot;, teamIDs.toString());
               <stringProp name="Sample.scope">all</stringProp>
             </RegexExtractor>
             <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Add ID in queueIDs variable" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">String queueIDs = vars.get(&quot;queueIDs&quot;);
-//queueIDs = queueIDs + &quot;,&quot; + vars.get(&quot;partnerID&quot;) + &quot;_&quot;  + vars.get(&quot;queueID_1&quot;) ;
-queueIDs = queueIDs + &quot;##&quot; + vars.get(&quot;queueID_1&quot;) ;
-//queueIDs = queueIDs.replace(&quot;null,&quot;,&quot;&quot;);
-vars.put(&quot;queueIDs&quot;, queueIDs.toString());</stringProp>
-            </BeanShellPostProcessor>
-            <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST StatusWF" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
@@ -422,18 +346,6 @@ vars.put(&quot;queueIDs&quot;, queueIDs.toString());</stringProp>
               <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               <stringProp name="Sample.scope">all</stringProp>
             </RegexExtractor>
-            <hashTree/>
-            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Add ID in StatusWFIDs variable" enabled="true">
-              <boolProp name="resetInterpreter">false</boolProp>
-              <stringProp name="parameters"></stringProp>
-              <stringProp name="filename"></stringProp>
-              <stringProp name="script">String statusWFIDs = vars.get(&quot;statusWFIDs&quot;);
-//statusWFIDs = statusWFIDs + &quot;,&quot; + vars.get(&quot;partnerID&quot;) + &quot;_&quot; + vars.get(&quot;statusWFID_1&quot;) ;
-statusWFIDs = statusWFIDs + &quot;##&quot; + vars.get(&quot;statusWFID_1&quot;) ;
-//statusWFIDs = statusWFIDs.replace(&quot;null,&quot;,&quot;&quot;);
-vars.put(&quot;statusWFIDs&quot;, statusWFIDs.toString());
-</stringProp>
-            </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Team to Queues" enabled="true">
@@ -598,62 +510,20 @@ vars.put(&quot;statusWFIDs&quot;, statusWFIDs.toString());
             <stringProp name="HTTPSampler.connect_timeout"></stringProp>
             <stringProp name="HTTPSampler.response_timeout"></stringProp>
           </HTTPSamplerProxy>
-          <hashTree/>
-        </hashTree>
-        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-          <stringProp name="filename">${projectpath}/data/partnersIDs.csv</stringProp>
-          <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">partnerID</stringProp>
-          <boolProp name="ignoreFirstLine">true</boolProp>
-          <stringProp name="delimiter">,</stringProp>
-          <boolProp name="quotedData">false</boolProp>
-          <boolProp name="recycle">false</boolProp>
-          <boolProp name="stopThread">true</boolProp>
-          <stringProp name="shareMode">shareMode.group</stringProp>
-        </CSVDataSet>
-        <hashTree/>
-        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-          <boolProp name="ResultCollector.error_logging">false</boolProp>
-          <objProp>
-            <name>saveConfig</name>
-            <value class="SampleSaveConfiguration">
-              <time>true</time>
-              <latency>true</latency>
-              <timestamp>true</timestamp>
-              <success>true</success>
-              <label>true</label>
-              <code>true</code>
-              <message>true</message>
-              <threadName>true</threadName>
-              <dataType>true</dataType>
-              <encoding>false</encoding>
-              <assertions>true</assertions>
-              <subresults>true</subresults>
-              <responseData>false</responseData>
-              <samplerData>false</samplerData>
-              <xml>false</xml>
-              <fieldNames>true</fieldNames>
-              <responseHeaders>false</responseHeaders>
-              <requestHeaders>false</requestHeaders>
-              <responseDataOnError>false</responseDataOnError>
-              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
-              <assertionsResultsToSave>0</assertionsResultsToSave>
-              <bytes>true</bytes>
-              <sentBytes>true</sentBytes>
-              <url>true</url>
-              <threadCounts>true</threadCounts>
-              <idleTime>true</idleTime>
-              <connectTime>true</connectTime>
-            </value>
-          </objProp>
-          <stringProp name="filename"></stringProp>
-        </ResultCollector>
-        <hashTree/>
-        <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Write - queues, tags, team and statusWF" enabled="true">
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="script">import java.io.FileWriter;
+          <hashTree>
+            <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="extract Activate Queue Response" enabled="true">
+              <stringProp name="RegexExtractor.useHeaders">code</stringProp>
+              <stringProp name="RegexExtractor.refname">response</stringProp>
+              <stringProp name="RegexExtractor.regex">(.*)</stringProp>
+              <stringProp name="RegexExtractor.template">$1$</stringProp>
+              <stringProp name="RegexExtractor.default">0</stringProp>
+              <stringProp name="RegexExtractor.match_number">-1</stringProp>
+              <stringProp name="Sample.scope">all</stringProp>
+            </RegexExtractor>
+            <hashTree/>
+          </hashTree>
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+            <stringProp name="BeanShellSampler.query">import java.io.FileWriter;
 import java.util.Arrays;
 import java.io.Writer;
 import java.util.List;
@@ -693,38 +563,87 @@ public void writeLine(FileWriter writer, String[] params, char separator)
 
 }
 
-String s1 = vars.get(&quot;queueIDs&quot;);
-String s2 = vars.get(&quot;tagIDs&quot;);
-String s3 = vars.get(&quot;teamIDs&quot;);
-String s4 = vars.get(&quot;statusWFIDs&quot;);
+String csvFile1 = &quot;D:/Repositories/RegistryMS/data/partner_team.csv&quot;;
+String[] params1 = {vars.get(&quot;partnerID&quot;), vars.get(&quot;teamID_1&quot;)}; 
+FileWriter fileWriter1 = new FileWriter(csvFile1, true);
+writeLine(fileWriter1, params1, SEPARATOR);
+fileWriter1.flush();
+fileWriter1.close();
 
-int count = 5;
-String splitor = &quot;##&quot;;
+String csvFile2 = &quot;D:/Repositories/RegistryMS/data/partner_status_workflows.csv&quot;;
+String[] params2 = {vars.get(&quot;partnerID&quot;), vars.get(&quot;statusWFID_1&quot;)}; 
+FileWriter fileWriter2 = new FileWriter(csvFile2, true);
+writeLine(fileWriter2, params2, SEPARATOR);
+fileWriter2.flush();
+fileWriter2.close();
 
-if(s1!=null &amp;&amp; s2!=null &amp;&amp; s3!=null &amp;&amp; s4!=null &amp;&amp; s1.split(splitor).length&gt;count &amp;&amp; s2.split(splitor).length&gt;count &amp;&amp; s3.split(splitor).length&gt;count &amp;&amp; s4.split(splitor).length&gt;count){
-//log.info(&quot;PartnerID &gt;&gt;&gt;&gt; &quot; + vars.get(&quot;partnerID&quot;));	
-//log.info(&quot;Queues &gt;&gt;&gt;&gt;&gt; &quot; + s1);
-//log.info(&quot;Tags &gt;&gt;&gt;&gt;&gt; &quot; + s2);
-//log.info(&quot;Teams &gt;&gt;&gt;&gt;&gt; &quot; + s3);
-//log.info(&quot;StatusWF &gt;&gt;&gt;&gt;&gt; &quot; + s4);
-vars.put(&quot;queueIDs&quot;,&quot;&quot;);
-vars.put(&quot;tagIDs&quot;,&quot;&quot;);
-vars.put(&quot;teamIDs&quot;,&quot;&quot;);
-vars.put(&quot;statusWFIDs&quot;,&quot;&quot;);
+int activatedQ = Integer.parseInt(vars.get(&quot;response_1&quot;));
 
-s1 = s1.replace(&quot;null##&quot;,&quot;&quot;);
-s2 = s2.replace(&quot;null##&quot;,&quot;&quot;);
-s3 = s3.replace(&quot;null##&quot;,&quot;&quot;);
-s4 = s4.replace(&quot;null##&quot;,&quot;&quot;);
-
-String csvFile = &quot;D:/Repositories/RegistryMS/data/partners_data.csv&quot;;
-String[] params = {vars.get(&quot;partnerID&quot;), s1, s3, s2, s4}; 
-FileWriter fileWriter = new FileWriter(csvFile, true);
-writeLine(fileWriter, params, SEPARATOR);
-fileWriter.flush();
-fileWriter.close();
-}</stringProp>
-        </BeanShellPostProcessor>
+if(activatedQ==200){
+String csvFile3 = &quot;D:/Repositories/RegistryMS/data/partner_queue.csv&quot;;
+String[] params3 = {vars.get(&quot;partnerID&quot;), vars.get(&quot;queueID_1&quot;)}; 
+FileWriter fileWriter3 = new FileWriter(csvFile3, true);
+writeLine(fileWriter3, params3, SEPARATOR);
+fileWriter3.flush();
+fileWriter3.close();
+}else{
+   log.info(&quot;&gt;&gt;&gt;&gt;&gt; failure &quot;);	
+}
+</stringProp>
+            <stringProp name="BeanShellSampler.filename"></stringProp>
+            <stringProp name="BeanShellSampler.parameters"></stringProp>
+            <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+          </BeanShellSampler>
+          <hashTree/>
+        </hashTree>
+        <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+          <stringProp name="filename">${projectpath}/data/partnerIDs.csv</stringProp>
+          <stringProp name="fileEncoding"></stringProp>
+          <stringProp name="variableNames">partnerID</stringProp>
+          <boolProp name="ignoreFirstLine">true</boolProp>
+          <stringProp name="delimiter">,</stringProp>
+          <boolProp name="quotedData">false</boolProp>
+          <boolProp name="recycle">false</boolProp>
+          <boolProp name="stopThread">true</boolProp>
+          <stringProp name="shareMode">shareMode.group</stringProp>
+        </CSVDataSet>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">true</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
         <hashTree/>
       </hashTree>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Add Tickets, Notes and Tags" enabled="true">
@@ -733,19 +652,70 @@ fileWriter.close();
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">1</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">5</stringProp>
+        <stringProp name="ThreadGroup.num_threads">25</stringProp>
         <stringProp name="ThreadGroup.ramp_time">0</stringProp>
         <boolProp name="ThreadGroup.scheduler">false</boolProp>
         <stringProp name="ThreadGroup.duration"></stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
-        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
       </ThreadGroup>
       <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_all_tags" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${partnerID}/tags/</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
+            <collectionProp name="Asserion.test_strings">
+              <stringProp name="1116933">&quot;id&quot;</stringProp>
+            </collectionProp>
+            <stringProp name="Assertion.custom_message"></stringProp>
+            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+            <boolProp name="Assertion.assume_success">false</boolProp>
+            <intProp name="Assertion.test_type">2</intProp>
+          </ResponseAssertion>
+          <hashTree/>
+          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Tag ID&apos;s" enabled="true">
+            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
+            <stringProp name="RegexExtractor.refname">tagID</stringProp>
+            <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})&quot;</stringProp>
+            <stringProp name="RegexExtractor.template">$1$</stringProp>
+            <stringProp name="RegexExtractor.default"></stringProp>
+            <stringProp name="RegexExtractor.match_number">-1</stringProp>
+            <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
+            <stringProp name="Sample.scope">all</stringProp>
+          </RegexExtractor>
+          <hashTree/>
+        </hashTree>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Tickets" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">${__Random(950,1000,)}</stringProp>
+          <stringProp name="LoopController.loops">200</stringProp>
         </LoopController>
         <hashTree>
+          <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter-Tickets" enabled="true">
+            <stringProp name="CounterConfig.start">1</stringProp>
+            <stringProp name="CounterConfig.end">50</stringProp>
+            <stringProp name="CounterConfig.incr">1</stringProp>
+            <stringProp name="CounterConfig.name">count</stringProp>
+            <stringProp name="CounterConfig.format"></stringProp>
+            <boolProp name="CounterConfig.per_user">true</boolProp>
+            <boolProp name="CounterConfig.reset_on_tg_iteration">true</boolProp>
+          </CounterConfig>
+          <hashTree/>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Post Ticket" enabled="true">
             <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
             <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -755,7 +725,7 @@ fileWriter.close();
                   <stringProp name="Argument.value">{&#xd;
 	&quot;summary&quot;:&quot;${__RandomString(${__Random(1,150,)},abcdABCD1234,)}&quot;,&#xd;
 	&quot;companyID&quot;:&quot;${__UUID}&quot;,&#xd;
-	&quot;queueID&quot;:&quot;${__substring(${queue},0,36,)}&quot;&#xd;
+	&quot;queueID&quot;:&quot;${queueID}&quot;&#xd;
 }&#xd;
 </stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -797,6 +767,62 @@ fileWriter.close();
               <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
               <stringProp name="Sample.scope">all</stringProp>
             </RegexExtractor>
+            <hashTree/>
+            <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Write Tickets in File" enabled="true">
+              <boolProp name="resetInterpreter">false</boolProp>
+              <stringProp name="parameters"></stringProp>
+              <stringProp name="filename"></stringProp>
+              <stringProp name="script">import java.io.FileWriter;
+import java.util.Arrays;
+import java.io.Writer;
+import java.util.List;
+
+//Default separator
+char SEPARATOR = &apos;,&apos;;
+
+//function write line in csv
+public void writeLine(FileWriter writer, String[] params, char separator)
+{
+   boolean firstParam = true;
+
+   StringBuilder stringBuilder = new StringBuilder();
+   String param = &quot;&quot;;
+   
+   for (int i = 0; i &lt; params.length; i++)
+   {
+      //get param
+      param = params[i];
+       
+         //if the first param in the line, separator is not needed
+       if (!firstParam) 
+       {
+           stringBuilder.append(separator);
+       }
+
+         //Add param to line
+       stringBuilder.append(param);
+      
+       firstParam = false;
+   }
+
+   //prepare file to next line
+   stringBuilder.append(&quot;\n&quot;);
+
+   writer.append(stringBuilder.toString());
+
+}
+
+if(Integer.parseInt(vars.get(&quot;count&quot;))&lt;=50){
+
+String csvFile = &quot;D:/Repositories/RegistryMS/data/partner_ticket.csv&quot;;
+String[] params = {vars.get(&quot;partnerID&quot;), vars.get(&quot;ticketID_1&quot;)}; 
+FileWriter fileWriter = new FileWriter(csvFile, true);
+writeLine(fileWriter, params, SEPARATOR);
+fileWriter.flush();
+fileWriter.close();
+}</stringProp>
+              <stringProp name="TestPlan.comments">It will write max 200 tickets in file againt each partner </stringProp>
+            </BeanShellPostProcessor>
             <hashTree/>
           </hashTree>
           <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Notes to Ticket" enabled="true">
@@ -846,7 +872,7 @@ fileWriter.close();
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-	&quot;tagID&quot;:&quot;${__substring(${tag},${__jexl2(${__jm__Add_Tags_to_Tickets__idx}*38)},${__jexl2(${__jm__Add_Tags_to_Tickets__idx}*38 + 36)},)}&quot;&#xd;
+	&quot;tagID&quot;: &quot;${__V(tagID_${__jexl2(${__jm__Add_Tags_to_Tickets__idx}+1)})}&quot;&#xd;
 }&#xd;
 </stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
@@ -870,51 +896,10 @@ fileWriter.close();
             <hashTree/>
           </hashTree>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_all_tickets" enabled="true">
-          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
-            <collectionProp name="Arguments.arguments"/>
-          </elementProp>
-          <stringProp name="HTTPSampler.domain">${HOST}</stringProp>
-          <stringProp name="HTTPSampler.port"></stringProp>
-          <stringProp name="HTTPSampler.protocol">https</stringProp>
-          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${partnerID}/tickets/</stringProp>
-          <stringProp name="HTTPSampler.method">GET</stringProp>
-          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
-          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
-          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
-          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
-          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
-          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
-          <stringProp name="HTTPSampler.response_timeout"></stringProp>
-        </HTTPSamplerProxy>
-        <hashTree>
-          <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="Response Assertion" enabled="true">
-            <collectionProp name="Asserion.test_strings">
-              <stringProp name="1116933">&quot;id&quot;</stringProp>
-            </collectionProp>
-            <stringProp name="Assertion.custom_message"></stringProp>
-            <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
-            <boolProp name="Assertion.assume_success">false</boolProp>
-            <intProp name="Assertion.test_type">2</intProp>
-          </ResponseAssertion>
-          <hashTree/>
-          <RegexExtractor guiclass="RegexExtractorGui" testclass="RegexExtractor" testname="Ticket ID&apos;s" enabled="true">
-            <stringProp name="RegexExtractor.useHeaders">false</stringProp>
-            <stringProp name="RegexExtractor.refname">ticketIDs</stringProp>
-            <stringProp name="RegexExtractor.regex">&quot;id&quot;:&quot;([a-z0-9]{8}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{4}-[a-z0-9]{12})&quot;</stringProp>
-            <stringProp name="RegexExtractor.template">$1$</stringProp>
-            <stringProp name="RegexExtractor.default"></stringProp>
-            <stringProp name="RegexExtractor.match_number">-1</stringProp>
-            <boolProp name="RegexExtractor.default_empty_value">true</boolProp>
-            <stringProp name="Sample.scope">all</stringProp>
-          </RegexExtractor>
-          <hashTree/>
-        </hashTree>
         <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
-          <stringProp name="filename">${projectpath}/data/partners_data.csv</stringProp>
+          <stringProp name="filename">${projectpath}/data/partner_queue.csv</stringProp>
           <stringProp name="fileEncoding"></stringProp>
-          <stringProp name="variableNames">partnerID,queue,team,tag</stringProp>
+          <stringProp name="variableNames">partnerID,queueID</stringProp>
           <boolProp name="ignoreFirstLine">true</boolProp>
           <stringProp name="delimiter">,</stringProp>
           <boolProp name="quotedData">false</boolProp>
@@ -959,75 +944,6 @@ fileWriter.close();
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
-        <BeanShellPostProcessor guiclass="TestBeanGUI" testclass="BeanShellPostProcessor" testname="Write Tickets in File" enabled="true">
-          <boolProp name="resetInterpreter">false</boolProp>
-          <stringProp name="parameters"></stringProp>
-          <stringProp name="filename"></stringProp>
-          <stringProp name="script">import java.io.FileWriter;
-import java.util.Arrays;
-import java.io.Writer;
-import java.util.List;
-
-//Default separator
-char SEPARATOR = &apos;,&apos;;
-
-//function write line in csv
-public void writeLine(FileWriter writer, String[] params, char separator)
-{
-   boolean firstParam = true;
-
-   StringBuilder stringBuilder = new StringBuilder();
-   String param = &quot;&quot;;
-   
-   for (int i = 0; i &lt; params.length; i++)
-   {
-      //get param
-      param = params[i];
-       
-         //if the first param in the line, separator is not needed
-       if (!firstParam) 
-       {
-           stringBuilder.append(separator);
-       }
-
-         //Add param to line
-       stringBuilder.append(param);
-      
-       firstParam = false;
-   }
-
-   //prepare file to next line
-   stringBuilder.append(&quot;\n&quot;);
-
-   writer.append(stringBuilder.toString());
-
-}
-
-String tempTickets = &quot;&quot;;
-
-if(vars.get(&quot;ticketIDs_matchNr&quot;)!=null){
-int max = Integer.valueOf(vars.get(&quot;ticketIDs_matchNr&quot;));
-String splitor = &quot;##&quot;;
-int min = 1;
-if(max&gt;200 ) {
-	min = max-200;
-}
-for(int i=max; i&gt;=min; i--){
-     tempTickets = tempTickets + &quot;##&quot; + vars.get(&quot;ticketIDs_&quot;+i);
-}
-}
-
-if(!tempTickets.equals(&quot;&quot;)){
-String csvFile = &quot;D:/Repositories/RegistryMS/data/partners_ticket_data.csv&quot;;
-String[] params = {vars.get(&quot;partnerID&quot;), tempTickets}; 
-FileWriter fileWriter = new FileWriter(csvFile, true);
-writeLine(fileWriter, params, SEPARATOR);
-fileWriter.flush();
-fileWriter.close();
-}</stringProp>
-          <stringProp name="TestPlan.comments">It will write max 200 tickets in file again the partner </stringProp>
-        </BeanShellPostProcessor>
         <hashTree/>
       </hashTree>
     </hashTree>
