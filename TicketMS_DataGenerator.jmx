@@ -107,6 +107,17 @@
         <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
       </SetupThreadGroup>
       <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="SetUp Varaibles" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="queue_count" elementType="Argument">
+              <stringProp name="Argument.name">queue_count</stringProp>
+              <stringProp name="Argument.value">5</stringProp>
+              <stringProp name="Argument.desc">it will be use to create - queue, team and StatusWF per partner</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_all_statuses" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -189,9 +200,72 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Write - statuses and priorities" enabled="true">
+          <stringProp name="BeanShellSampler.query">import java.io.FileWriter;
+import java.util.Arrays;
+import java.io.Writer;
+import java.util.List;
+
+//Default separator
+char SEPARATOR = &apos;,&apos;;
+
+//function write line in csv
+public void writeLine(FileWriter writer, String[] params, char separator)
+{
+   boolean firstParam = true;
+
+   StringBuilder stringBuilder = new StringBuilder();
+   String param = &quot;&quot;;
+   
+   for (int i = 0; i &lt; params.length; i++)
+   {
+      //get param
+      param = params[i];
+       
+         //if the first param in the line, separator is not needed
+       if (!firstParam) 
+       {
+           stringBuilder.append(separator);
+       }
+
+         //Add param to line
+       stringBuilder.append(param);
+      
+       firstParam = false;
+   }
+
+   //prepare file to next line
+   stringBuilder.append(&quot;\n&quot;);
+
+   writer.append(stringBuilder.toString());
+
+}
+
+String csvFile1 = &quot;D:/Repositories/RegistryMS/data/partner_statuses.csv&quot;;
+FileWriter fileWriter1 = new FileWriter(csvFile1, true);
+for(int i=1;i&lt;6;i++){
+String[] params1 = {vars.get(&quot;partnerID&quot;), vars.get(&quot;StatusIDs_&quot;+ i)}; 
+writeLine(fileWriter1, params1, SEPARATOR);
+}
+fileWriter1.flush();
+fileWriter1.close();
+
+String csvFile2 = &quot;D:/Repositories/RegistryMS/data/partner_priorities.csv&quot;;
+FileWriter fileWriter2 = new FileWriter(csvFile2, true);
+for(int i=1;i&lt;5;i++){
+String[] params2 = {vars.get(&quot;partnerID&quot;), vars.get(&quot;PriorityIDs_&quot;+ i)}; 
+writeLine(fileWriter2, params2, SEPARATOR);
+}
+fileWriter2.flush();
+fileWriter2.close();</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop_Controller_teams" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">5</stringProp>
+          <stringProp name="LoopController.loops">${queue_count}</stringProp>
         </LoopController>
         <hashTree>
           <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="POST Teams" enabled="true">
@@ -522,7 +596,7 @@
             </RegexExtractor>
             <hashTree/>
           </hashTree>
-          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="BeanShell Sampler" enabled="true">
+          <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Write - Queues, Team, StatusWF" enabled="true">
             <stringProp name="BeanShellSampler.query">import java.io.FileWriter;
 import java.util.Arrays;
 import java.io.Writer;
@@ -587,7 +661,12 @@ writeLine(fileWriter3, params3, SEPARATOR);
 fileWriter3.flush();
 fileWriter3.close();
 }else{
-   log.info(&quot;&gt;&gt;&gt;&gt;&gt; failure &quot;);	
+String csvFile3 = &quot;D:/Repositories/RegistryMS/data/partner_queue_failed.csv&quot;;
+String[] params3 = {vars.get(&quot;partnerID&quot;), vars.get(&quot;queueID_1&quot;)}; 
+FileWriter fileWriter3 = new FileWriter(csvFile3, true);
+writeLine(fileWriter3, params3, SEPARATOR);
+fileWriter3.flush();
+fileWriter3.close();	
 }
 </stringProp>
             <stringProp name="BeanShellSampler.filename"></stringProp>
@@ -660,6 +739,33 @@ fileWriter3.close();
         <boolProp name="ThreadGroup.same_user_on_next_iteration">false</boolProp>
       </ThreadGroup>
       <hashTree>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Tickets Varaibles" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="ticket_count" elementType="Argument">
+              <stringProp name="Argument.name">ticket_count</stringProp>
+              <stringProp name="Argument.value">200</stringProp>
+              <stringProp name="Argument.desc">tickets count per partner*</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="max_ticket_write_in_file" elementType="Argument">
+              <stringProp name="Argument.name">max_ticket_write_in_file</stringProp>
+              <stringProp name="Argument.value">50</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">maximum tickets to be written in file partner_ticket.csv</stringProp>
+            </elementProp>
+            <elementProp name="max_notes_per_ticket" elementType="Argument">
+              <stringProp name="Argument.name">max_notes_per_ticket</stringProp>
+              <stringProp name="Argument.value">200</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+            <elementProp name="min_notes_per_ticket" elementType="Argument">
+              <stringProp name="Argument.name">min_notes_per_ticket</stringProp>
+              <stringProp name="Argument.value">1</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="get_all_tags" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -701,14 +807,68 @@ fileWriter3.close();
           </RegexExtractor>
           <hashTree/>
         </hashTree>
+        <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Write - tags" enabled="true">
+          <stringProp name="BeanShellSampler.query">import java.io.FileWriter;
+import java.util.Arrays;
+import java.io.Writer;
+import java.util.List;
+
+//Default separator
+char SEPARATOR = &apos;,&apos;;
+
+//function write line in csv
+public void writeLine(FileWriter writer, String[] params, char separator)
+{
+   boolean firstParam = true;
+
+   StringBuilder stringBuilder = new StringBuilder();
+   String param = &quot;&quot;;
+   
+   for (int i = 0; i &lt; params.length; i++)
+   {
+      //get param
+      param = params[i];
+       
+         //if the first param in the line, separator is not needed
+       if (!firstParam) 
+       {
+           stringBuilder.append(separator);
+       }
+
+         //Add param to line
+       stringBuilder.append(param);
+      
+       firstParam = false;
+   }
+
+   //prepare file to next line
+   stringBuilder.append(&quot;\n&quot;);
+
+   writer.append(stringBuilder.toString());
+
+}
+
+String csvFile1 = &quot;D:/Repositories/RegistryMS/data/partner_tags.csv&quot;;
+FileWriter fileWriter1 = new FileWriter(csvFile1, true);
+for(int i=1;i&lt;6;i++){
+String[] params1 = {vars.get(&quot;partnerID&quot;), vars.get(&quot;tagID_&quot;+ i)}; 
+writeLine(fileWriter1, params1, SEPARATOR);
+}
+fileWriter1.flush();
+fileWriter1.close();</stringProp>
+          <stringProp name="BeanShellSampler.filename"></stringProp>
+          <stringProp name="BeanShellSampler.parameters"></stringProp>
+          <boolProp name="BeanShellSampler.resetInterpreter">false</boolProp>
+        </BeanShellSampler>
+        <hashTree/>
         <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Tickets" enabled="true">
           <boolProp name="LoopController.continue_forever">true</boolProp>
-          <stringProp name="LoopController.loops">200</stringProp>
+          <stringProp name="LoopController.loops">${ticket_count}</stringProp>
         </LoopController>
         <hashTree>
           <CounterConfig guiclass="CounterConfigGui" testclass="CounterConfig" testname="Counter-Tickets" enabled="true">
             <stringProp name="CounterConfig.start">1</stringProp>
-            <stringProp name="CounterConfig.end">50</stringProp>
+            <stringProp name="CounterConfig.end">${max_ticket_write_in_file}</stringProp>
             <stringProp name="CounterConfig.incr">1</stringProp>
             <stringProp name="CounterConfig.name">count</stringProp>
             <stringProp name="CounterConfig.format"></stringProp>
@@ -827,7 +987,7 @@ fileWriter.close();
           </hashTree>
           <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Notes to Ticket" enabled="true">
             <boolProp name="LoopController.continue_forever">true</boolProp>
-            <stringProp name="LoopController.loops">${__Random(1,200,)}</stringProp>
+            <stringProp name="LoopController.loops">${__Random(${min_notes_per_ticket},${max_notes_per_ticket},)}</stringProp>
           </LoopController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Post Notes" enabled="true">
