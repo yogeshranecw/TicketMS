@@ -28,64 +28,84 @@
             <stringProp name="Argument.value">${__P(rampup,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="get_all_keys_rampup" elementType="Argument">
-            <stringProp name="Argument.name">get_all_keys_rampup</stringProp>
-            <stringProp name="Argument.value">${__P(get_all_keys_rampup,10)}</stringProp>
+          <elementProp name="get_all_tickets_users" elementType="Argument">
+            <stringProp name="Argument.name">get_all_tickets_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_all_tickets_users,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="get_single_key_users" elementType="Argument">
-            <stringProp name="Argument.name">get_single_key_users</stringProp>
-            <stringProp name="Argument.value">${__P(get_single_key_users,1)}</stringProp>
+          <elementProp name="get_all_tickets_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_all_tickets_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_all_tickets_tpm,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="get_single_key_rampup" elementType="Argument">
-            <stringProp name="Argument.name">get_single_key_rampup</stringProp>
-            <stringProp name="Argument.value">${__P(get_single_key_rampup,40)}</stringProp>
+          <elementProp name="get_ticket_byId_users" elementType="Argument">
+            <stringProp name="Argument.name">get_ticket_byId_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_ticket_byId_users,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="kafka_producer_users" elementType="Argument">
-            <stringProp name="Argument.name">kafka_producer_users</stringProp>
-            <stringProp name="Argument.value">${__P(kafka_producer_users,1)}</stringProp>
+          <elementProp name="get_ticket_byId_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_ticket_byId_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_ticket_byId_tpm,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="kafka_producer_rampup" elementType="Argument">
-            <stringProp name="Argument.name">kafka_producer_rampup</stringProp>
-            <stringProp name="Argument.value">${__P(kafka_producer_rampup,1)}</stringProp>
+          <elementProp name="get_notes_by_ticketId_users" elementType="Argument">
+            <stringProp name="Argument.name">get_notes_by_ticketId_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_notes_by_ticketId_users,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="KAFKA_TOPIC" elementType="Argument">
-            <stringProp name="Argument.name">KAFKA_TOPIC</stringProp>
-            <stringProp name="Argument.value">${__P(KAFKA_TOPIC,registry)}</stringProp>
+          <elementProp name="get_notes_by_ticketId_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_notes_by_ticketId_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_notes_by_ticketId_tpm,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="KAFKA_BROKERS" elementType="Argument">
-            <stringProp name="Argument.name">KAFKA_BROKERS</stringProp>
-            <stringProp name="Argument.value">${__P(KAFKA_BROKERS,172.28.18.65:9092\,172.28.19.46:9092\,172.28.18.96:9092\,172.28.19.139:9092\,172.28.17.137:9092\,172.28.17.166:9092\,172.28.18.80:9092\,172.28.16.27:9092\,172.28.18.100:9092)}</stringProp>
+          <elementProp name="get_queue_byId_users" elementType="Argument">
+            <stringProp name="Argument.name">get_queue_byId_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_queue_byId_users,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="filename" elementType="Argument">
-            <stringProp name="Argument.name">filename</stringProp>
-            <stringProp name="Argument.value">${__P(filename,RegsitryMS_VRT)}</stringProp>
+          <elementProp name="get_queue_byId_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_queue_byId_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_queue_byId_tpm,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="AMS_URL" elementType="Argument">
-            <stringProp name="Argument.name">AMS_URL</stringProp>
-            <stringProp name="Argument.value">${__P(AMS_URL,internal-perf-external-ALB-agent-1576867507.us-east-1.elb.amazonaws.com)}</stringProp>
+          <elementProp name="post_patch_ticket_post_note_users" elementType="Argument">
+            <stringProp name="Argument.name">post_patch_ticket_post_note_users</stringProp>
+            <stringProp name="Argument.value">${__P(post_patch_ticket_post_note_users,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="kafka_producer_tpm" elementType="Argument">
-            <stringProp name="Argument.name">kafka_producer_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(kafka_producer_tpm,100)}</stringProp>
+          <elementProp name="post_patch_ticket_post_note_tpm" elementType="Argument">
+            <stringProp name="Argument.name">post_patch_ticket_post_note_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(post_patch_ticket_post_note_tpm,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="get_all_keys_tpm" elementType="Argument">
-            <stringProp name="Argument.name">get_all_keys_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(get_all_keys_tpm,10)}</stringProp>
+          <elementProp name="get_statustransition_by_statusworkflowId_users" elementType="Argument">
+            <stringProp name="Argument.name">get_statustransition_by_statusworkflowId_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_statustransition_by_statusworkflowId_users,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="get_single_key_tpm" elementType="Argument">
-            <stringProp name="Argument.name">get_single_key_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(get_single_key_tpm,10)}</stringProp>
+          <elementProp name="get_statustransition_by_statusworkflowId_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_statustransition_by_statusworkflowId_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_statustransition_by_statusworkflowId_tpm,10)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="get_statuses_types_priorities_users" elementType="Argument">
+            <stringProp name="Argument.name">get_statuses_types_priorities_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_statuses_types_priorities_users,10)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="get_statuses_types_priorities_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_statuses_types_priorities_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_statuses_types_priorities_tpm,10)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="get_tags_by_ticketId_users" elementType="Argument">
+            <stringProp name="Argument.name">get_tags_by_ticketId_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_tags_by_ticketId_users,10)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="get_tags_by_ticketId_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_tags_by_ticketId_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_tags_by_ticketId_tpm,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
