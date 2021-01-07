@@ -726,7 +726,7 @@
         <stringProp name="variableNames">partnerID</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data File - partnerIDs-Ticket" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data File - partnerID-Ticket" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="filename">${projectpath}/data/partner_ticket.csv</stringProp>
@@ -738,7 +738,7 @@
         <stringProp name="variableNames">t_PartnerID,ticketID</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data File - partnerIDs-Queue" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data File - partnerID-Queue" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="filename">${projectpath}/data/partner_queue.csv</stringProp>
@@ -750,7 +750,7 @@
         <stringProp name="variableNames">q_PartnerID,queueID</stringProp>
       </CSVDataSet>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data File - partnerIDs-StatusWF" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data File - partnerID-StatusWF" enabled="true">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="filename">${projectpath}/data/partner_status_workflows</stringProp>
