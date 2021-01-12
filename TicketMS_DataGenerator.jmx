@@ -48,7 +48,7 @@
           </collectionProp>
         </Arguments>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="01_get_all_statuses" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="01_GET Statuses" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -89,7 +89,7 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="02_get_all_priorities" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="02_GET Priorities" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -130,7 +130,7 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="03_get_all_tags" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="03_GET Tags" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -172,7 +172,8 @@
           <hashTree/>
         </hashTree>
         <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Write - statuses, priorities and tags" enabled="true">
-          <stringProp name="BeanShellSampler.query">import java.io.FileWriter;
+          <stringProp name="BeanShellSampler.query">SampleResult.setIgnore();
+import java.io.FileWriter;
 import java.util.Arrays;
 import java.io.Writer;
 import java.util.List;
@@ -436,7 +437,7 @@ fileWriter3.close();
           <hashTree/>
           <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="POST_status_to_WF" enabled="true">
             <boolProp name="LoopController.continue_forever">true</boolProp>
-            <stringProp name="LoopController.loops">4</stringProp>
+            <stringProp name="LoopController.loops">5</stringProp>
           </LoopController>
           <hashTree>
             <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="09_POST status to status WF" enabled="true">
@@ -580,7 +581,8 @@ fileWriter3.close();
             <hashTree/>
           </hashTree>
           <BeanShellSampler guiclass="BeanShellSamplerGui" testclass="BeanShellSampler" testname="Write - Queues, Team, StatusWF" enabled="true">
-            <stringProp name="BeanShellSampler.query">import java.io.FileWriter;
+            <stringProp name="BeanShellSampler.query">SampleResult.setIgnore();
+import java.io.FileWriter;
 import java.util.Arrays;
 import java.io.Writer;
 import java.util.List;
@@ -691,8 +693,8 @@ fileWriter3.close();
           <collectionProp name="Arguments.arguments">
             <elementProp name="ticket_count" elementType="Argument">
               <stringProp name="Argument.name">ticket_count</stringProp>
-              <stringProp name="Argument.value">2</stringProp>
-              <stringProp name="Argument.desc">tickets count per partner* 2*queues* no of partner</stringProp>
+              <stringProp name="Argument.value">40</stringProp>
+              <stringProp name="Argument.desc">tickets count per partner =  ticket_count*queues peer partner</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="max_ticket_write_in_file" elementType="Argument">
@@ -703,18 +705,20 @@ fileWriter3.close();
             </elementProp>
             <elementProp name="max_notes_per_ticket" elementType="Argument">
               <stringProp name="Argument.name">max_notes_per_ticket</stringProp>
-              <stringProp name="Argument.value">5</stringProp>
+              <stringProp name="Argument.value">200</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">maximum notes per ticket</stringProp>
             </elementProp>
             <elementProp name="min_notes_per_ticket" elementType="Argument">
               <stringProp name="Argument.name">min_notes_per_ticket</stringProp>
               <stringProp name="Argument.value">1</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
+              <stringProp name="Argument.desc">minimum notes per ticket</stringProp>
             </elementProp>
           </collectionProp>
         </Arguments>
         <hashTree/>
-        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="13_get_all_tags" enabled="true">
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="13_GET Tags" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
           </elementProp>
@@ -915,7 +919,7 @@ fileWriter.close();
             </HTTPSamplerProxy>
             <hashTree/>
           </hashTree>
-          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add_Tags_to_Tickets" enabled="true">
+          <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Add Tags to Ticket" enabled="true">
             <boolProp name="LoopController.continue_forever">true</boolProp>
             <stringProp name="LoopController.loops">${__Random(2,5,)}</stringProp>
           </LoopController>
@@ -927,7 +931,7 @@ fileWriter.close();
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-	&quot;tagID&quot;: &quot;${__V(tagID_${__jexl2(${__jm__Add_Tags_to_Tickets__idx}+1)})}&quot;&#xd;
+	&quot;tagID&quot;: &quot;${__V(tagID_${__jexl2(${__jm__Add Tags to Ticket__idx}+1)})}&quot;&#xd;
 }&#xd;
 </stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
@@ -1002,7 +1006,7 @@ fileWriter.close();
       </ResultCollector>
       <hashTree/>
       <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <boolProp name="ResultCollector.error_logging">true</boolProp>
         <objProp>
           <name>saveConfig</name>
           <value class="SampleSaveConfiguration">
