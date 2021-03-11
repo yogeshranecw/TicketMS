@@ -10,7 +10,7 @@
         <collectionProp name="Arguments.arguments">
           <elementProp name="projectpath" elementType="Argument">
             <stringProp name="Argument.name">projectpath</stringProp>
-            <stringProp name="Argument.value">${__P(projectpath,D:\Repositories\TicketMS)}</stringProp>
+            <stringProp name="Argument.value">${__P(projectpath,D:\Repositories\qa-manage-performance-ticketms)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="HOST" elementType="Argument">
@@ -56,7 +56,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${partnerID}/statuses/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${partnerID}/statuses/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -97,7 +97,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${partnerID}/priorities/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${partnerID}/priorities/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -138,7 +138,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${partnerID}/tags/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${partnerID}/tags/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -270,7 +270,7 @@ fileWriter3.close();
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/teams</stringProp>
+            <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/teams</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -300,7 +300,7 @@ fileWriter3.close();
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;memberID&quot;: &quot;${__UUID}&quot;  &#xd;
+    &quot;memberId&quot;: &quot;${__UUID}&quot;  &#xd;
 }&#xd;
 </stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -311,7 +311,7 @@ fileWriter3.close();
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/teams/${teamID_1}/members/</stringProp>
+            <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/teams/${teamID_1}/members/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -330,7 +330,7 @@ fileWriter3.close();
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
 	&quot;name&quot;:&quot;${__RandomString(50,1234ABCDabcd)}&quot;,&#xd;
-	&quot;defaultPriorityID&quot;: &quot;${__V(PriorityIDs_${__Random(1,4,)})}&quot;&#xd;
+	&quot;defaultPriorityId&quot;: &quot;${__V(PriorityIDs_${__Random(1,4,)})}&quot;&#xd;
 }&#xd;
 </stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -341,7 +341,7 @@ fileWriter3.close();
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/queues/</stringProp>
+            <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/queues/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -383,7 +383,7 @@ fileWriter3.close();
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/statusWorkflows/</stringProp>
+            <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/status-workflows/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -413,7 +413,7 @@ fileWriter3.close();
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;teamID&quot;: &quot;${teamID_1}&quot;  &#xd;
+    &quot;teamId&quot;: &quot;${teamID_1}&quot;  &#xd;
 }&#xd;
 </stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -424,7 +424,7 @@ fileWriter3.close();
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/queues/${queueID_1}/teams/</stringProp>
+            <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/queues/${queueID_1}/teams/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -447,7 +447,7 @@ fileWriter3.close();
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-    &quot;statusID&quot;: &quot;${__V(StatusIDs_${__jexl2(${__jm__POST_status_to_WF__idx}+1)})}&quot; &#xd;
+    &quot;statusId&quot;: &quot;${__V(StatusIDs_${__jexl2(${__jm__POST_status_to_WF__idx}+1)})}&quot; &#xd;
 }&#xd;
 </stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
@@ -458,7 +458,7 @@ fileWriter3.close();
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/statusWorkflows/${statusWFID_1}/statuses/</stringProp>
+              <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/status-workflows/${statusWFID_1}/statuses/</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -477,8 +477,8 @@ fileWriter3.close();
                 <elementProp name="" elementType="HTTPArgument">
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
-    &quot;fromStatusID&quot;: &quot;${StatusIDs_1}&quot;,&#xd;
-    &quot;toStatusID&quot;: &quot;${StatusIDs_2}&quot;&#xd;
+    &quot;fromStatusId&quot;: &quot;${StatusIDs_1}&quot;,&#xd;
+    &quot;toStatusId&quot;: &quot;${StatusIDs_2}&quot;&#xd;
 }&#xd;
 </stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -489,7 +489,7 @@ fileWriter3.close();
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/statusWorkflows/${statusWFID_1}/statusTransitions/</stringProp>
+            <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/status-workflows/${statusWFID_1}/status-transitions/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -521,7 +521,7 @@ fileWriter3.close();
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/statusWorkflows/${statusWFID_1}/</stringProp>
+            <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/status-workflows/${statusWFID_1}/</stringProp>
             <stringProp name="HTTPSampler.method">PATCH</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -541,7 +541,7 @@ fileWriter3.close();
                   <stringProp name="Argument.value">[&#xd;
     {&#xd;
       &quot;op&quot;: &quot;replace&quot;,&#xd;
-      &quot;path&quot;: &quot;/statusWorkflowID&quot;,&#xd;
+      &quot;path&quot;: &quot;/statusWorkflowId&quot;,&#xd;
       &quot;value&quot;: &quot;${statusWFID_1}&quot;&#xd;
     },&#xd;
     {&#xd;
@@ -558,7 +558,7 @@ fileWriter3.close();
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/queues/${queueID_1}/</stringProp>
+            <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/queues/${queueID_1}/</stringProp>
             <stringProp name="HTTPSampler.method">PATCH</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -694,7 +694,7 @@ fileWriter3.close();
             <elementProp name="ticket_count" elementType="Argument">
               <stringProp name="Argument.name">ticket_count</stringProp>
               <stringProp name="Argument.value">40</stringProp>
-              <stringProp name="Argument.desc">tickets count per partner =  ticket_count*queues peer partner</stringProp>
+              <stringProp name="Argument.desc">tickets count per partner =  ticket_count*queues per partner</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="max_ticket_write_in_file" elementType="Argument">
@@ -726,7 +726,7 @@ fileWriter3.close();
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${partnerID}/tags/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${partnerID}/tags/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -782,8 +782,8 @@ fileWriter3.close();
                   <boolProp name="HTTPArgument.always_encode">false</boolProp>
                   <stringProp name="Argument.value">{&#xd;
 	&quot;summary&quot;:&quot;${__RandomString(${__Random(1,150,)},abcdABCD1234,)}&quot;,&#xd;
-	&quot;companyID&quot;:&quot;${__UUID}&quot;,&#xd;
-	&quot;queueID&quot;:&quot;${queueID}&quot;&#xd;
+	&quot;companyId&quot;:&quot;${__UUID}&quot;,&#xd;
+	&quot;queueId&quot;:&quot;${queueID}&quot;&#xd;
 }&#xd;
 </stringProp>
                   <stringProp name="Argument.metadata">=</stringProp>
@@ -794,7 +794,7 @@ fileWriter3.close();
             <stringProp name="HTTPSampler.port"></stringProp>
             <stringProp name="HTTPSampler.protocol">https</stringProp>
             <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-            <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/tickets/</stringProp>
+            <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/tickets/</stringProp>
             <stringProp name="HTTPSampler.method">POST</stringProp>
             <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
             <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -907,7 +907,7 @@ fileWriter.close();
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/tickets/${ticketID_1}/notes/</stringProp>
+              <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/tickets/${ticketID_1}/notes/</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -931,7 +931,7 @@ fileWriter.close();
                   <elementProp name="" elementType="HTTPArgument">
                     <boolProp name="HTTPArgument.always_encode">false</boolProp>
                     <stringProp name="Argument.value">{&#xd;
-	&quot;tagID&quot;: &quot;${__V(tagID_${__jexl2(${__jm__Add Tags to Ticket__idx}+1)})}&quot;&#xd;
+	&quot;tagId&quot;: &quot;${__V(tagID_${__jexl2(${__jm__Add Tags to Ticket__idx}+1)})}&quot;&#xd;
 }&#xd;
 </stringProp>
                     <stringProp name="Argument.metadata">=</stringProp>
@@ -942,7 +942,7 @@ fileWriter.close();
               <stringProp name="HTTPSampler.port"></stringProp>
               <stringProp name="HTTPSampler.protocol">https</stringProp>
               <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-              <stringProp name="HTTPSampler.path">ticket/v1/partners/${partnerID}/tickets/${ticketID_1}/tags/</stringProp>
+              <stringProp name="HTTPSampler.path">ticket-service/api/v1/partners/${partnerID}/tickets/${ticketID_1}/tags/</stringProp>
               <stringProp name="HTTPSampler.method">POST</stringProp>
               <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
               <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -968,7 +968,7 @@ fileWriter.close();
         </CSVDataSet>
         <hashTree/>
       </hashTree>
-      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="false">
+      <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
         <boolProp name="ResultCollector.error_logging">true</boolProp>
         <objProp>
           <name>saveConfig</name>
@@ -1005,8 +1005,8 @@ fileWriter.close();
         <stringProp name="filename">${projectpath}/results/vrtDG_${filename}_${__time(ddMMMyyyy_hhmmss,)}.xml</stringProp>
       </ResultCollector>
       <hashTree/>
-      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="false">
-        <boolProp name="ResultCollector.error_logging">true</boolProp>
+      <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+        <boolProp name="ResultCollector.error_logging">false</boolProp>
         <objProp>
           <name>saveConfig</name>
           <value class="SampleSaveConfiguration">
