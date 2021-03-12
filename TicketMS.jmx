@@ -30,82 +30,122 @@
           </elementProp>
           <elementProp name="get_all_tickets_users" elementType="Argument">
             <stringProp name="Argument.name">get_all_tickets_users</stringProp>
-            <stringProp name="Argument.value">${__P(get_all_tickets_users,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_all_tickets_users,325)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_all_tickets_tpm" elementType="Argument">
             <stringProp name="Argument.name">get_all_tickets_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(get_all_tickets_tpm,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_all_tickets_tpm,13.5)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_ticket_byId_users" elementType="Argument">
             <stringProp name="Argument.name">get_ticket_byId_users</stringProp>
-            <stringProp name="Argument.value">${__P(get_ticket_byId_users,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_ticket_byId_users,225)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_ticket_byId_tpm" elementType="Argument">
             <stringProp name="Argument.name">get_ticket_byId_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(get_ticket_byId_tpm,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_ticket_byId_tpm,13)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_notes_by_ticketId_users" elementType="Argument">
             <stringProp name="Argument.name">get_notes_by_ticketId_users</stringProp>
-            <stringProp name="Argument.value">${__P(get_notes_by_ticketId_users,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_notes_by_ticketId_users,160)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_notes_by_ticketId_tpm" elementType="Argument">
             <stringProp name="Argument.name">get_notes_by_ticketId_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(get_notes_by_ticketId_tpm,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_notes_by_ticketId_tpm,13.3)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_queue_byId_users" elementType="Argument">
             <stringProp name="Argument.name">get_queue_byId_users</stringProp>
-            <stringProp name="Argument.value">${__P(get_queue_byId_users,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_queue_byId_users,70)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_queue_byId_tpm" elementType="Argument">
             <stringProp name="Argument.name">get_queue_byId_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(get_queue_byId_tpm,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_queue_byId_tpm,13.3)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="post_patch_ticket_post_note_users" elementType="Argument">
-            <stringProp name="Argument.name">post_patch_ticket_post_note_users</stringProp>
-            <stringProp name="Argument.value">${__P(post_patch_ticket_post_note_users,10)}</stringProp>
+          <elementProp name="post_ticket_users" elementType="Argument">
+            <stringProp name="Argument.name">post_ticket_users</stringProp>
+            <stringProp name="Argument.value">${__P(post_ticket_users,40)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="post_patch_ticket_post_note_tpm" elementType="Argument">
-            <stringProp name="Argument.name">post_patch_ticket_post_note_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(post_patch_ticket_post_note_tpm,10)}</stringProp>
+          <elementProp name="post_ticket_tpm" elementType="Argument">
+            <stringProp name="Argument.name">post_ticket_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(post_ticket_tpm,13.3)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="patch_ticket_users" elementType="Argument">
+            <stringProp name="Argument.name">patch_ticket_users</stringProp>
+            <stringProp name="Argument.value">${__P(patch_ticket_users,40)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="patch_ticket_tpm" elementType="Argument">
+            <stringProp name="Argument.name">patch_ticket_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(patch_ticket_tpm,13.3)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="post_note_users" elementType="Argument">
+            <stringProp name="Argument.name">post_note_users</stringProp>
+            <stringProp name="Argument.value">${__P(post_note_users,40)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="post_note_tpm" elementType="Argument">
+            <stringProp name="Argument.name">post_note_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(post_note_tpm,13.3)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_statustransition_by_statusworkflowId_users" elementType="Argument">
             <stringProp name="Argument.name">get_statustransition_by_statusworkflowId_users</stringProp>
-            <stringProp name="Argument.value">${__P(get_statustransition_by_statusworkflowId_users,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_statustransition_by_statusworkflowId_users,20)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_statustransition_by_statusworkflowId_tpm" elementType="Argument">
             <stringProp name="Argument.name">get_statustransition_by_statusworkflowId_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(get_statustransition_by_statusworkflowId_tpm,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_statustransition_by_statusworkflowId_tpm,13.3)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="get_statuses_types_priorities_users" elementType="Argument">
-            <stringProp name="Argument.name">get_statuses_types_priorities_users</stringProp>
-            <stringProp name="Argument.value">${__P(get_statuses_types_priorities_users,10)}</stringProp>
+          <elementProp name="get_statuses_users" elementType="Argument">
+            <stringProp name="Argument.name">get_statuses_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_statuses_users,10)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
-          <elementProp name="get_statuses_types_priorities_tpm" elementType="Argument">
-            <stringProp name="Argument.name">get_statuses_types_priorities_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(get_statuses_types_priorities_tpm,10)}</stringProp>
+          <elementProp name="get_statuses_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_statuses_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_statuses_tpm,13.3)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="get_priorities_users" elementType="Argument">
+            <stringProp name="Argument.name">get_priorities_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_priorities_users,10)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="get_priorities_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_priorities_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_priorities_tpm,13.3)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="get_types_users" elementType="Argument">
+            <stringProp name="Argument.name">get_types_users</stringProp>
+            <stringProp name="Argument.value">${__P(get_types_users,10)}</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="get_types_tpm" elementType="Argument">
+            <stringProp name="Argument.name">get_types_tpm</stringProp>
+            <stringProp name="Argument.value">${__P(get_types_tpm,13.3)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_tags_by_ticketId_users" elementType="Argument">
             <stringProp name="Argument.name">get_tags_by_ticketId_users</stringProp>
-            <stringProp name="Argument.value">${__P(get_tags_by_ticketId_users,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_tags_by_ticketId_users,5)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
           <elementProp name="get_tags_by_ticketId_tpm" elementType="Argument">
             <stringProp name="Argument.name">get_tags_by_ticketId_tpm</stringProp>
-            <stringProp name="Argument.value">${__P(get_tags_by_ticketId_tpm,10)}</stringProp>
+            <stringProp name="Argument.value">${__P(get_tags_by_ticketId_tpm,13.2)}</stringProp>
             <stringProp name="Argument.metadata">=</stringProp>
           </elementProp>
         </collectionProp>
@@ -325,10 +365,10 @@
         </ConstantThroughputTimer>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="post_patch_ticket_post_note" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="post_ticket" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="735635366">
-            <stringProp name="1589792983">${post_patch_ticket_post_note_users}</stringProp>
+          <collectionProp name="-1717635105">
+            <stringProp name="626814912">${post_ticket_users}</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="-49196231">${rampup}</stringProp>
             <stringProp name="-289938830">${duration}</stringProp>
@@ -362,7 +402,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${q_PartnerID}/tickets/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${q_PartnerID}/tickets/</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -395,6 +435,29 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="post_ticket-TPM" enabled="true">
+          <intProp name="calcMode">0</intProp>
+          <stringProp name="throughput">${post_ticket_tpm}</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="patch_ticket" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-1615372593">
+            <stringProp name="-1947543014">${patch_ticket_users}</stringProp>
+            <stringProp name="48">0</stringProp>
+            <stringProp name="-49196231">${rampup}</stringProp>
+            <stringProp name="-289938830">${duration}</stringProp>
+            <stringProp name="48">0</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="06_patch_ticket" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -416,7 +479,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${q_PartnerID}/tickets/${ticketID_1}/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${t_PartnerID}/tickets/${ticketID}/</stringProp>
           <stringProp name="HTTPSampler.method">PATCH</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -438,6 +501,29 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="patch_ticket-TPM" enabled="true">
+          <intProp name="calcMode">0</intProp>
+          <stringProp name="throughput">${patch_ticket_tpm}</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="post_note" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="885246459">
+            <stringProp name="-241989094">${post_note_users}</stringProp>
+            <stringProp name="48">0</stringProp>
+            <stringProp name="-49196231">${rampup}</stringProp>
+            <stringProp name="-289938830">${duration}</stringProp>
+            <stringProp name="48">0</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="07_post_note" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
@@ -456,7 +542,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${q_PartnerID}/tickets/${ticketID_1}/notes/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${t_PartnerID}/tickets/${ticketID}/notes/</stringProp>
           <stringProp name="HTTPSampler.method">POST</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -489,9 +575,9 @@
           </RegexExtractor>
           <hashTree/>
         </hashTree>
-        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="post_patch_ticket_post_note-TPM" enabled="true">
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="post_note-TPM" enabled="true">
           <intProp name="calcMode">0</intProp>
-          <stringProp name="throughput">${post_patch_ticket_post_note_tpm}</stringProp>
+          <stringProp name="throughput">${post_note_tpm}</stringProp>
         </ConstantThroughputTimer>
         <hashTree/>
       </hashTree>
@@ -548,10 +634,10 @@
         </ConstantThroughputTimer>
         <hashTree/>
       </hashTree>
-      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="get_statuses_types_priorities" enabled="true">
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="get_statuses" enabled="true">
         <collectionProp name="ultimatethreadgroupdata">
-          <collectionProp name="549049112">
-            <stringProp name="-2018602803">${get_statuses_types_priorities_users}</stringProp>
+          <collectionProp name="35351807">
+            <stringProp name="-1812716716">${get_statuses_users}</stringProp>
             <stringProp name="48">0</stringProp>
             <stringProp name="-49196231">${rampup}</stringProp>
             <stringProp name="-289938830">${duration}</stringProp>
@@ -573,7 +659,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${partnerID}/statuses/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${partnerID}/statuses/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -595,6 +681,29 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="get_statuses-TPM" enabled="true">
+          <intProp name="calcMode">0</intProp>
+          <stringProp name="throughput">${get_statuses_tpm}</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="get_priorities" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="-1000172792">
+            <stringProp name="-786630670">${get_priorities_users}</stringProp>
+            <stringProp name="48">0</stringProp>
+            <stringProp name="-49196231">${rampup}</stringProp>
+            <stringProp name="-289938830">${duration}</stringProp>
+            <stringProp name="48">0</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="10_get_all_priorities" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -603,7 +712,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${partnerID}/priorities/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${partnerID}/priorities/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -625,6 +734,29 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="get_priorities-TPM" enabled="true">
+          <intProp name="calcMode">0</intProp>
+          <stringProp name="throughput">${get_priorities_tpm}</stringProp>
+        </ConstantThroughputTimer>
+        <hashTree/>
+      </hashTree>
+      <kg.apc.jmeter.threads.UltimateThreadGroup guiclass="kg.apc.jmeter.threads.UltimateThreadGroupGui" testclass="kg.apc.jmeter.threads.UltimateThreadGroup" testname="get_types" enabled="true">
+        <collectionProp name="ultimatethreadgroupdata">
+          <collectionProp name="1160166343">
+            <stringProp name="-872645861">${get_types_users}</stringProp>
+            <stringProp name="48">0</stringProp>
+            <stringProp name="-49196231">${rampup}</stringProp>
+            <stringProp name="-289938830">${duration}</stringProp>
+            <stringProp name="48">0</stringProp>
+          </collectionProp>
+        </collectionProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+      </kg.apc.jmeter.threads.UltimateThreadGroup>
+      <hashTree>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="11_get_all_types" enabled="true">
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
             <collectionProp name="Arguments.arguments"/>
@@ -633,7 +765,7 @@
           <stringProp name="HTTPSampler.port"></stringProp>
           <stringProp name="HTTPSampler.protocol">https</stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/ticket-service/api/v1/partners/${partnerID}/types/</stringProp>
+          <stringProp name="HTTPSampler.path">/ticket/v1/partners/${partnerID}/types/</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
@@ -655,9 +787,9 @@
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="get_statuses_types_priorities-TPM" enabled="true">
+        <ConstantThroughputTimer guiclass="TestBeanGUI" testclass="ConstantThroughputTimer" testname="get_types-TPM" enabled="true">
           <intProp name="calcMode">0</intProp>
-          <stringProp name="throughput">${get_statuses_types_priorities_tpm}</stringProp>
+          <stringProp name="throughput">${get_types_tpm}</stringProp>
         </ConstantThroughputTimer>
         <hashTree/>
       </hashTree>
@@ -763,7 +895,7 @@
       </CSVDataSet>
       <hashTree/>
       <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
-        <boolProp name="ResultCollector.error_logging">false</boolProp>
+        <boolProp name="ResultCollector.error_logging">true</boolProp>
         <objProp>
           <name>saveConfig</name>
           <value class="SampleSaveConfiguration">

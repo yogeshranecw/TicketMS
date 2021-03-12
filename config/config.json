@@ -1,11 +1,11 @@
 {
     "JmeterSetting": {
         "mainSetting": {
-            "jmxfile": "RegistryMS.jmx",
-            "projectpath": "/home/PT/projects/RegistryMS/",
+            "jmxfile": "TicketMS.jmx",
+            "projectpath": "/home/PT/projects/TicketMS/",
             "JMETER_HOME": "/home/PT/tools/jmeter/apache-jmeter-5.3",
-            "ReportFilePrefix": "LT_RegistryMS",
-            "micro_service": "registry_micro_service",
+            "ReportFilePrefix": "LT_TicketMS",
+            "micro_service": "ticket_micro_service",
             "sanityTest": "false",
             "sanityTestDuration": "60",
             "waitTime": "60",
@@ -14,22 +14,35 @@
         "Script": {
             "HOST": "ticket.qa.use1.cwticketdev.cwnet.io",
             "duration": "3600",
-            "get_all_keys_users": "50",
-            "get_all_keys_rampup": "60",
-            "get_all_keys_tpm" : "40",
-            "get_single_key_users": "50",
-            "get_single_key_rampup": "60",
-            "get_single_key_tpm" : "40",
-            "kafka_producer_users" : "10",
-            "kafka_producer_rampup": "60",
-            "kafka_producer_tpm" : "30",
-            "KAFKA_TOPIC": "registry",
-            "KAFKA_BROKERS": "172.28.18.65:9092\\,172.28.19.46:9092\\,172.28.18.96:9092\\,172.28.19.139:9092\\,172.28.17.137:9092\\,172.28.17.166:9092\\,172.28.18.80:9092\\,172.28.16.27:9092\\,172.28.18.100:9092",
-            "filename": "registry-error"
+			"get_all_tickets_users":"330",
+			"get_all_tickets_tpm":"13.3",
+			"get_ticket_byId_users":"260",
+			"get_ticket_byId_tpm":"12.8",
+			"get_notes_by_ticketId_users":"160",
+			"get_notes_by_ticketId_tpm":"13.3",
+			"get_queue_byId_users":"70",
+			"get_queue_byId_tpm":"13.3",
+			"post_ticket_users":"40",
+			"post_ticket_tpm":"13.3",
+			"patch_ticket_users":"40",
+			"patch_ticket_tpm":"13.3",
+			"post_note_users":"40",
+			"post_note_tpm":"13.3",
+			"get_statustransition_by_statusworkflowId_users":"20",
+			"get_statustransition_by_statusworkflowId_tpm":"13.3",
+			"get_statuses_users":"10",
+			"get_statuses_tpm":"13.3",
+			"get_priorities_users":"10",
+			"get_priorities_tpm":"13.3",
+			"get_types_users":"10",
+			"get_types_tpm":"13.3",
+			"get_tags_by_ticketId_users":"5",
+			"get_tags_by_ticketId_tpm":"13.3",
+            "filename": "ticket-error"
         },
         "SplitMode": {
             "SplitMode": "false",
-            "Master": "172.28.17.244",
+            "Master": "LoadInjector_IP_update",
             "SlaveList": "",
             "remoteUser": "root"
         }
@@ -50,13 +63,13 @@
         "deleteFromBackup": "5"
     },
      "HardwareStats": {
-        "getstats" : "true",
+        "getstats" : "false",
         "user" : "perfuser",
-        "ms_ips_path" : "/home/PT/projects/RegistryMS/scripts/IP_list.txt",
-        "script" : "/home/perfuser/load-test-scripts-RegistryMS/scheduler.py",
+        "ms_ips_path" : "/home/PT/projects/TicketMS/scripts/IP_list.txt",
+        "script" : "/home/perfuser/load-test-scripts-TicketMS/scheduler.py",
         "hardware_stat_path" : "/home/perfuser/load-test-scripts-RegistryMS",
-        "ms_cms_service" : "registry-e71c9c1e",
-        "kafka_cms_service" : "agent-res",
+        "ms_cms_service" : "ticket-e71c9c1e",
+        "kafka_cms_service" : "agent-ticket",
         "zookeeper_cms_service" : "agent-res",
         "cassandra_cms_service" : "common"
   },
@@ -69,6 +82,6 @@
     },
     "RunSetting": {
         "totalRunDuration": "3600",
-        "HighestRampup": "60"
+        "HighestRampup": "120"
     }
 }
